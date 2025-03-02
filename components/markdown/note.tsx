@@ -4,7 +4,7 @@ import { PropsWithChildren } from "react";
 
 type NoteProps = PropsWithChildren & {
   title?: string;
-  type?: "note" | "danger" | "warning" | "success";
+  type?: "note" | "danger" | "warning" | "success" | "faction";
 };
 
 export default function Note({
@@ -25,11 +25,11 @@ export default function Note({
   return (
     <div
       className={cn(
-        "border rounded-md px-5 pb-0.5 mt-5 mb-7 text-sm tracking-wide",
+        "border rounded-md px-5 pb-0.5 mt-5 mb-7 text-sm tracking-tight",
         noteClassNames
       )}
     >
-      <p className="font-bold -mb-2.5">{title}:</p> {children}
+      <h3 className="font-bold -mb-2.5">{title}:</h3> {children}
     </div>
   );
 }

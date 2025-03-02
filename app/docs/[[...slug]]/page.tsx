@@ -1,3 +1,4 @@
+import Image from "@/components/markdown/image";
 import DocsBreadcrumb from "@/components/docs-breadcrumb";
 import Pagination from "@/components/pagination";
 import Toc from "@/components/toc";
@@ -19,17 +20,25 @@ export default async function DocsPage(props: PageProps) {
   const res = await getDocsForSlug(pathName);
 
   if (!res) notFound();
+  const imagePath = `/assets/images/${res.frontmatter.image}`;
+
   return (
     <div className="flex items-start gap-10">
       <div className="flex-[4.5] py-10">
         <DocsBreadcrumb paths={slug} />
+        {res.frontmatter.image && (
+          <Image src={imagePath} alt={res.frontmatter.title} className="mb-6" />
+        )}
         <Typography>
+          <span className="mb-1 block border-l-background sm:text-[18.5px] text-[16.5px] font-subtitle tracking-normal font-semibold">
+            {res.frontmatter.description}
+          </span>
+          {res.frontmatter.description && (
+            <div className="block w-[100px] h-[2px] bg-[#d33f1e] mb-8"></div>
+          )}
           <h1 className="sm:text-3xl text-2xl !-mt-0.5">
             {res.frontmatter.title}
           </h1>
-          <p className="-mt-4 text-muted-foreground sm:text-[16.5px] text-[14.5px]">
-            {res.frontmatter.description}
-          </p>
           <div>{res.content}</div>
           <Pagination pathname={pathName} />
         </Typography>
@@ -51,6 +60,7 @@ export async function generateMetadata(props: PageProps) {
   return {
     title: frontmatter.title,
     description: frontmatter.description,
+    image: frontmatter.image,
   };
 }
 

@@ -62,7 +62,8 @@ const config = {
       },
       fontFamily: {
         code: ["var(--font-geist-mono)"],
-        regular: ["var(--font-geist-sans)"],
+        regular: ["var(--font-arx)"],
+        subtitle: ["Mondapick, sans-serif"],
       },
       keyframes: {
         "accordion-down": {

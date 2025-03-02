@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { ThemeProvider } from "@/components/contexts/theme-provider";
 import { Navbar } from "@/components/navbar";
-import { Space_Mono, Space_Grotesk } from "next/font/google";
+import { Space_Mono, Space_Grotesk, Fraunces } from "next/font/google";
 import { Footer } from "@/components/footer";
 import "@/styles/globals.css";
 
@@ -19,11 +19,18 @@ const monoFont = Space_Mono({
   weight: "400",
 });
 
+const arxFont = Fraunces({
+  subsets: ["latin"],
+  variable: "--font-arx",
+  display: "swap",
+  weight: ["400","500","700","900"],
+});
+
 export const metadata: Metadata = {
-  title: "AriaDocs - Template",
+  title: "ARX Workforce",
   metadataBase: new URL("https://ariadocs.vercel.app/"),
   description:
-    "This comprehensive documentation template, crafted with Next.js and available as open-source, delivers a sleek and responsive design, tailored to meet all your project documentation requirements.",
+    "Sleep now. Moon later.",
 };
 
 export default function RootLayout({
@@ -41,7 +48,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${sansFont.variable} ${monoFont.variable} font-regular antialiased tracking-wide`}
+        className={`${arxFont.variable} ${sansFont.variable} ${monoFont.variable} font-regular antialiased tracking-tight`}
         suppressHydrationWarning
       >
         <ThemeProvider

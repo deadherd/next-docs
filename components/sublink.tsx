@@ -29,7 +29,7 @@ export default function SubLink({
 
   const Comp = (
     <Anchor
-      activeClassName="text-primary dark:font-medium font-semibold"
+      activeClassName="text-primary dark:font-medium font-semibold border-s-4 pl-2 text-[#fabc07]"
       href={href}
     >
       {title}
@@ -48,7 +48,7 @@ export default function SubLink({
       Comp
     )
   ) : (
-    <h4 className="font-medium sm:text-sm text-primary">
+    <h4 className="font-bold sm:text-lg text-primary">
       {title}
       {tag && (
         <span className="dark:bg-blue-700 bg-blue-500 rounded-md px-1.5 py-0.5 mx-2 text-xs text-white !font-normal">
@@ -82,7 +82,7 @@ export default function SubLink({
         <CollapsibleContent>
           <div
             className={cn(
-              "flex flex-col items-start sm:text-sm dark:text-stone-300/85 text-stone-800 ml-0.5 mt-2.5 gap-3",
+              "flex flex-col items-start sm:text-md dark:text-stone-300/85 text-stone-800 ml-0.5 mt-2.5 gap-3",
               level > 0 && "pl-4 border-l ml-1.5"
             )}
           >

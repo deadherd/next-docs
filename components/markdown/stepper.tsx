@@ -34,7 +34,7 @@ export function StepperItem({
 }: PropsWithChildren & { title?: string }) {
   return (
     <div className="pt-0.5">
-      <h4 className="mt-0">{title}</h4>
+      <div className="mt-0 font-bold">{title}</div>
       <div>{children}</div>
     </div>
   );

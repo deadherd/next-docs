@@ -1,6 +1,31 @@
 @import url("./syntax.css");
 @import url("./algolia.css");
 
+@font-face {
+  font-family: 'Mondapick';
+  src: url('/assets/fonts/mondapick/mondapick-webfont.woff2') format('woff2'), url('/assets/fonts/mondapick/mondapick-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Mondapick';
+  src: url('/assets/fonts/mondapick/mondapick-bold-webfont.woff2') format('woff2'), url('/assets/fonts/mondapick/mondapick-bold-webfont.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Mondapick';
+  src: url('/assets/fonts/mondapick/mondapick-extrabold-webfont.woff2') format('woff2'), url('/assets/fonts/mondapick/mondapick-extrabold-webfont.woff') format('woff');
+  font-weight: 900;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Awerik';
+  src: url('/assets/fonts/awerik/awerik-webfont.woff2') format('woff2'), url('/assets/fonts/mondapick/awerik-webfont.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
 :root {
   font-variant-ligatures: none;
 }
@@ -11,25 +36,25 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 20 14.3% 4.1%;
+    --background: 28 18% 95%;
+    --foreground: 220 36% 20%;
     --card: 0 0% 100%;
-    --card-foreground: 20 14.3% 4.1%;
+    --card-foreground: 220 36% 20%;
     --popover: 0 0% 100%;
-    --popover-foreground: 20 14.3% 4.1%;
+    --popover-foreground: 220 36% 20%;
     --primary: 24 9.8% 10%;
-    --primary-foreground: 60 9.1% 97.8%;
+    --primary-foreground: 220 36% 10%;
     --secondary: 60 4.8% 95.9%;
-    --secondary-foreground: 24 9.8% 10%;
+    --secondary-foreground: 220 36% 10%;
     --muted: 60 4.8% 95.9%;
-    --muted-foreground: 25 5.3% 44.7%;
+    --muted-foreground: 220 36% 40%;
     --accent: 60 4.8% 95.9%;
-    --accent-foreground: 24 9.8% 10%;
+    --accent-foreground: 220 36% 10%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 60 9.1% 97.8%;
-    --border: 20 5.9% 90%;
-    --input: 20 5.9% 90%;
-    --ring: 20 14.3% 4.1%;
+    --border: 220 36% 90%;
+    --input: 220 36% 90%;
+    --ring: 220 36% 20%;
     --radius: 0.5rem;
     --chart-1: 12 76% 61%;
     --chart-2: 173 58% 39%;
@@ -39,8 +64,8 @@
   }
 
   .dark {
-    --background: 20 14.3% 4.1%;
-    --foreground: 60 9.1% 97.8%;
+    --background: 220 36% 5%;
+    --foreground: 28 8% 95%;
     --card: 20 14.3% 4.1%;
     --card-foreground: 60 9.1% 97.8%;
     --popover: 20 14.3% 4.1%;
@@ -55,7 +80,7 @@
     --accent-foreground: 60 9.1% 97.8%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 60 9.1% 97.8%;
-    --border: 12 6.5% 15.1%;
+    --border: 28 8% 15%;
     --input: 12 6.5% 15.1%;
     --ring: 24 5.7% 82.9%;
     --chart-1: 220 70% 50%;
@@ -176,3 +201,19 @@ pre>code {
 td>code {
   word-break: keep-all !important;
 }
+
+img {
+  border: 0!important;
+}
+
+div[data-state="open"] {
+  margin-left: 10px;
+}
+
+div[data-state="open"] > button h4 {
+  opacity: .6;
+}
+
+/*div[data-state="open"] div[data-state="open"] > button h4 {
+  color: #fabc07;
+}*/
