@@ -4,7 +4,7 @@ import Link from "next/link";
 import { buttonVariants } from "./ui/button";
 import Anchor from "./anchor";
 import { SheetLeftbar } from "./leftbar";
-import { page_routes } from "@/lib/routes-config";
+import { page_routes, page_routes_mc } from "@/lib/routes-config";
 import { SheetClose } from "@/components/ui/sheet";
 import AlgoliaSearch from "./algolia-search";
 import LogoSvg from "./svg/Logo";
@@ -14,6 +14,10 @@ export const NAVLINKS = [
   {
     title: "Handbook",
     href: `/docs${page_routes[0].href}`,
+  },
+  {
+    title: "Machina Carta",
+    href: `/docs${page_routes_mc[0].href}`,
   },
   {
     title: "Blog",

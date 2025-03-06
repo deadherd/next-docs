@@ -9,6 +9,12 @@
 }
 @font-face {
   font-family: 'Mondapick';
+  src: url('/assets/fonts/mondapick/mondapick-semibold-webfont.woff2') format('woff2'), url('/assets/fonts/mondapick/mondapick-semibold-webfont.woff') format('woff');
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Mondapick';
   src: url('/assets/fonts/mondapick/mondapick-bold-webfont.woff2') format('woff2'), url('/assets/fonts/mondapick/mondapick-bold-webfont.woff') format('woff');
   font-weight: bold;
   font-style: normal;
@@ -36,7 +42,7 @@
 
 @layer base {
   :root {
-    --background: 28 18% 95%;
+    --background: 26 5% 97%;
     --foreground: 220 36% 20%;
     --card: 0 0% 100%;
     --card-foreground: 220 36% 20%;
@@ -217,3 +223,36 @@ div[data-state="open"] > button h4 {
 /*div[data-state="open"] div[data-state="open"] > button h4 {
   color: #fabc07;
 }*/
+
+a.bg-primary {
+  background: #d33f1e;
+  transition: opacity .3s;
+}
+
+a.bg-primary:hover {
+  background: #d33f1e;
+  opacity: .7;
+}
+
+.prose :where(hr):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
+  border-color: #00c778;
+  opacity: .5;
+}
+
+.prose p :where(a):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
+  //text-decoration: none;
+  color: #d33f1e;
+  display: inline-block;
+  position: relative;
+  transition: color .3s;
+}
+
+.prose p :where(a):not(:where([class~="not-prose"],[class~="not-prose"] *)):hover {
+  color: #000;
+  //text-decoration: underline;
+}
+
+.prose,
+.prose :where(h1):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
+    color: var(--foreground);
+}
