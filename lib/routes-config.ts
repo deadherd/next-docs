@@ -81,17 +81,6 @@ export const ROUTES: EachRoute[] = [
   },
 ];
 
-export const ROUTES_MC: EachRoute[] = [
-  {
-    title: "Machina Carta",
-    href: "/machina-carta",
-    noLink: true,
-    items: [
-      { title: "Welcome", href: "/welcome" },
-    ],
-  },
-];
-
 type Page = { title: string; href: string };
 
 function getRecurrsiveAllLinks(node: EachRoute) {
@@ -107,4 +96,3 @@ function getRecurrsiveAllLinks(node: EachRoute) {
 }
 
 export const page_routes = ROUTES.map((it) => getRecurrsiveAllLinks(it)).flat();
-export const page_routes_mc = ROUTES_MC.map((it) => getRecurrsiveAllLinks(it)).flat();
